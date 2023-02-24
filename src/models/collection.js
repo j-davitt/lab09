@@ -6,8 +6,8 @@ class Collection {
   }
 
   get(id) {
-    if(id){
-      return this.model.findOne({where: {id}});
+    if (id) {
+      return this.model.findAll({ where: { id } });
     } else {
       return this.model.findAll();
     }
@@ -18,14 +18,13 @@ class Collection {
   }
 
   update(id, record) {
-    return this.model.update(record, {where: {id}});
+    return this.model.update(record, { where: { id } });
   }
 
   delete(id) {
-    return this.model.destroy({where: {id}});
+    return this.model.destroy({ where: { id } });
   }
 
 }
 
 module.exports = Collection;
-

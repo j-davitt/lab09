@@ -74,7 +74,7 @@ async function handleDelete(req, res) {
   try {
     let id = req.params.id;
     await req.model.delete(id);
-    res.status(204);
+    res.status(204).send('successful delete');
 
   } catch (error) {
     console.log(error);
@@ -83,5 +83,3 @@ async function handleDelete(req, res) {
 
 
 module.exports = router;
-
-
