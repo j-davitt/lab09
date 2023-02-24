@@ -7,7 +7,7 @@ const { users } = require('../models');
 
 const acl = require('./middleware/acl');
 const basicAuth = require('./middleware/basic');
-const bearerAuth = require('./middleware/bearer');
+// const bearerAuth = require('./middleware/bearer');
 
 userRouter.post('/signup', async (req, res, next) => {
   try {

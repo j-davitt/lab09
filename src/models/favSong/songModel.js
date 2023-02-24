@@ -3,10 +3,10 @@
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET || 'secretstring';
 
-const notesModel = (sequelize, DataTypes) => {
-  const model = sequelize.define('Notes', {
+const songModel = (sequelize, DataTypes) => {
+  const model = sequelize.define('Songs', {
     username: { type: DataTypes.STRING, required: true },
-    note: { type: DataTypes.STRING, required: true },
+    songName: { type: DataTypes.STRING, required: true },
   });
 
   model.afterValidate(async (data) => {
@@ -17,4 +17,4 @@ const notesModel = (sequelize, DataTypes) => {
   return model;
 };
 
-module.exports = notesModel;
+module.exports = songModel;

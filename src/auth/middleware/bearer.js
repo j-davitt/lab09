@@ -12,10 +12,10 @@ module.exports = async (req, res, next) => {
     const validUser = await users.authenticateToken(token);
     req.user = validUser;
     req.token = validUser.token;
+    req.body.username = validUser.token;
     next();
 
   } catch (error) {
     next('Invalid Login Error at bearer');
   }
 };
-
